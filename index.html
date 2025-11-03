@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rootkid - Cyber Journal</title>
+  <meta name="description" content="Hacking lessons, bypass methods, research, and tips. Updated daily.">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d0d0d;
+      --text: #00ff41;
+      --accent: #00ff41;
+      --glow: 0 0 10px #00ff41, 0 0 20px #00ff41;
+      --card-bg: rgba(20, 20, 20, 0.8);
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Roboto Mono', monospace;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    canvas { position: fixed; top: 0; left: 0; z-index: -1; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem; position: relative; z-index: 1; }
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+      border: 2px solid var(--accent);
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      background: rgba(0, 0, 0, 0.7);
+      box-shadow: var(--glow);
+    }
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3rem;
+      text-shadow: var(--glow);
+      margin-bottom: 0.5rem;
+    }
+    .subtitle {
+      font-size: 1.1rem;
+      color: #00cc33;
+      margin: 1rem 0;
+    }
+    .badge {
+      display: inline-block;
+      background: #000;
+      color: var(--accent);
+      padding: 0.3rem 0.8rem;
+      border: 1px solid var(--accent);
+      border-radius: 50px;
+      font-size: 0.8rem;
+      margin: 0.5rem;
+      text-shadow: 0 0 5px var(--accent);
+    }
+    .content {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 10px;
+      border: 1px solid #004d1a;
+      box-shadow: var(--glow);
+      backdrop-filter: blur(5px);
+    }
+    .update {
+      color: #00cc33;
+      font-size: 0.9rem;
+      text-align: center;
+      margin: 1.5rem 0;
+    }
+    .btn {
+      display: inline-block;
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 0.8rem 1.5rem;
+      margin: 1rem 0.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s;
+      box-shadow: var(--glow);
+    }
+    .btn:hover {
+      background: var(--accent);
+      color: #000;
+      transform: scale(1.05);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #006600;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+    .matrix { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.1; }
+  </style>
+</head>
+<body>
+
+<canvas class="matrix"></canvas>
+
+<div class="container">
+  <header>
+    <h1>Rootkid - Cyber Journal</h1>
+    <p class="subtitle">Hacking | Research | Bypass | Exploits | Free Forever</p>
+    <div>
+      <span class="badge">Daily Updates</span>
+      <span class="badge">100% Free</span>
+      <span class="badge">No Ads</span>
+    </div>
+  </header>
+
+  <div class="content">
+    <h2>Introduction</h2>
+    <p>
+      Welcome to the <strong>"Cyber Journal"</strong>!!!  
+      This journal is packed with lessons, research, tips, tricks, bypass methods, and much more about hacking that I've learned the hard way. 
+      I'll be updating it daily or weekly with new insights to keep myself and you up-to-date. 
+      Best of all, this Cyber Journal is <strong>100% free!</strong>
+    </p>
+
+    <div class="update">
+      Last updated: <span id="updated">Just now</span>
+    </div>
+
+    <div style="text-align:center; margin:2rem 0;">
+      <a href="#entries" class="btn">Read Entries</a>
+      <a href="https://github.com/Batman808026/hacker-journal.github.io" class="btn" target="_blank">GitHub Source</a>
+    </div>
+
+    <h3 id="entries">Latest Entries</h3>
+    <ul>
+      <li><a href="#">Port Scanning Mastery (Coming Soon)</a></li>
+      <li><a href="#">Web App Bypass Techniques</a></li>
+      <li><a href="#">Metasploit Automation Scripts</a></li>
+    </ul>
+
+    <p style="margin-top:2rem; font-size:0.9rem; color:#00cc33;">
+      <em>Was this helpful?</em> 
+      <a href="https://github.com/Batman808026/hacker-journal.github.io/issues" style="color:var(--accent);">Let me know →</a>
+    </p>
+  </div>
+
+  <footer>
+    <p>© 2025 Rootkid | Made with ☢️ on GitHub Pages</p>
+  </footer>
+</div>
+
+<script>
+// Matrix Rain Effect
+const canvas = document.querySelector('.matrix');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
+const fontSize = 16;
+const columns = canvas.width / fontSize;
+const drops = Array(Math.floor(columns)).fill(1);
+
+function draw() {
+  ctx.fillStyle = 'rgba(13, 13, 13, 0.05)';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = '#00ff41';
+  ctx.font = `${fontSize}px monospace`;
+
+  for (let i = 0; i < drops.length; i++) {
+    const text = matrix[Math.floor(Math.random() * matrix.length)];
+    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+      drops[i] = 0;
+    }
+    drops[i]++;
+  }
+}
+setInterval(draw, 35);
+
+// Update timestamp
+document.getElementById('updated').textContent = new Date().toLocaleString();
+</script>
+
+</body>
+</html>
