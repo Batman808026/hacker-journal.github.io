@@ -3,7 +3,7 @@ title: "Batman808026 - Hacker Journal"
 layout: default
 ---
 
-# Welcome to the Dark Side
+# Welcome to the Dark Side  ok ok
 
 This is **Batman808026's Hacker Journal** — a living archive of advanced pentesting, 0-day research, bypass methods, and weaponized tools.
 
